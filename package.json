@@ -1,6 +1,6 @@
 {
   "name": "kld-trivial-dom",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A trivial DOM-like implementation",
   "main": "index.js",
   "directories": {
