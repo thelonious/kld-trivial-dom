@@ -1,0 +1,7 @@
+<root>
+    <choose>
+        <when condition="a < b">
+            <set propertyName="x" to="10"/>
+        </when>
+    </choose>
+</root>

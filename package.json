@@ -1,0 +1,31 @@
+{
+  "name": "kld-trivial-dom",
+  "version": "0.0.1",
+  "description": "A trivial DOM-like implementation",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "expresso"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/thelonious/kld-trivial-dom"
+  },
+  "keywords": [
+    "DOM",
+    "XML",
+    "merge"
+  ],
+  "author": "Kevin Lindsey",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/thelonious/kld-trivial-dom/issues"
+  },
+  "homepage": "https://github.com/thelonious/kld-trivial-dom",
+  "devDependencies": {
+    "expresso": "^0.9.2",
+    "sax": "^0.6.0"
+  }
+}

@@ -1,0 +1,8 @@
+<root>
+    <choose>
+        <when condition="a < b"/>
+    </choose>
+    <choose>
+        <when condition="a > b"/>
+    </choose>
+</root>

@@ -1,0 +1,5 @@
+<root>
+    <child id="one"/>
+    <child id="two"/>
+    <child id="three"/>
+</root>
