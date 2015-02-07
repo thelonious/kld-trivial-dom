@@ -47,7 +47,6 @@ function layerComparator(a, b) {
         switch (a.elementName) {
             case "layer":
                 return a.getAttribute("id") === b.getAttribute("id");
-                break;
 
             default:
                 return true;
@@ -69,7 +68,6 @@ function whenComparator(a, b) {
         switch (a.elementName) {
             case "when":
                 return a.getAttribute("condition") === b.getAttribute("condition");
-                break;
 
             default:
                 return true;
@@ -103,11 +101,9 @@ function chooseComparator(a, b) {
                 }
 
                 return result;
-                break;
 
             case "when":
                 return a.getAttribute("condition") === b.getAttribute("condition");
-                break;
 
             default:
                 return true;
@@ -125,7 +121,7 @@ exports.rootMerge = function(beforeExit, assert) {
 
     assert.strictEqual(m.toString(), a.toString());
     assert.strictEqual(m.toString(), b.toString());
-}
+};
 
 exports.firstHasAttribute = function(beforeExit, assert) {
     var a = loadXML("rootWithAttribute");
@@ -200,4 +196,44 @@ exports.firstHasLessChildren = function(beforeExit, assert) {
     var m = a.merge(b);
 
     assert.strictEqual(m.toString(), b.toString());
+};
+
+exports.entitizeLessThan = function(beforeExit, assert) {
+    var element = new Element("test");
+
+    element.setAttribute("a", "<");
+
+    assert.strictEqual(element.toString().trim(), '<test a="&lt;"/>');
+};
+
+exports.entitizeGreaterThan = function(beforeExit, assert) {
+    var element = new Element("test");
+
+    element.setAttribute("a", ">");
+
+    assert.strictEqual(element.toString().trim(), '<test a="&gt;"/>');
+};
+
+exports.entitizeAmpersand = function(beforeExit, assert) {
+    var element = new Element("test");
+
+    element.setAttribute("a", "&");
+
+    assert.strictEqual(element.toString().trim(), '<test a="&amp;"/>');
+};
+
+exports.entitizeQuote = function(beforeExit, assert) {
+    var element = new Element("test");
+
+    element.setAttribute("a", "\"");
+
+    assert.strictEqual(element.toString().trim(), '<test a="&quot;"/>');
+};
+
+exports.entitizeApostrophe = function(beforeExit, assert) {
+    var element = new Element("test");
+
+    element.setAttribute("a", "'");
+
+    assert.strictEqual(element.toString().trim(), '<test a="&apos;"/>');
 };
